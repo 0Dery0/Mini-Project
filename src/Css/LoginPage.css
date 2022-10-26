@@ -1,0 +1,21 @@
+body{
+  background-color:rgb(249, 249, 249);
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.login-card{
+    margin-right: 0px;
+}
+.item-body{
+    display: flex;
+    justify-content: start;
+    margin-left: 5px;
+    
+}
+.loginImg{
+    width: 650px;
+    height: 500px;
+}
