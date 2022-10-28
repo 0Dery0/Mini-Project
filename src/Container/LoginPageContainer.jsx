@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPageContainer = () => {
-    const [emailInput, setEmailInput] = useState('');
+const [emailInput, setEmailInput] = useState('');
 const [passwordInput, setPasswordInput] = useState('');
 
 const navigate = useNavigate();
@@ -20,16 +20,13 @@ const handlePasswordChange = (e) => {
 const handleLoginSubmit = (e) => {
     e.preventDefault();
     let hardcode = {
-        email: 'admin@admin.com',
-        password: 'admin'
+        admin_email: 'admin@admin.com',
+        admin_password: 'admin'
     }
 
-    if ((emailInput === hardcode.email) && (passwordInput === hardcode.password)) {
-        const token = '123456abcdef';
-        sessionStorage.setItem('auth-token', token);
+    if ((emailInput === hardcode.admin_email) && (passwordInput === hardcode.admin_password)) {
         navigate('/Home');
     } else {
-        //bad combination
         alert('wrong email or password combination');
     }
 }
