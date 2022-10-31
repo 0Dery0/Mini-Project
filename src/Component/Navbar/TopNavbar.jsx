@@ -15,16 +15,9 @@ const TopNavbar = () => {
     <Navbar>
         <Container fluid className='navbar'>
             <Col sm={6} lg={8}>
-            <Navbar.Brand href="/" className='ps-4'>
-            <img
-              alt=""
-              src=""
-              width="40"
-              height="40"
-              className="d-inline-block align-top"
-            />{' '}
-            SPY-ON
-          </Navbar.Brand>
+            <div>
+            <SideNavbar/>
+            </div>
             </Col>
             <Col className='d-flex flex-row justify-content-around' sm={4} lg={2}>
             <div>
