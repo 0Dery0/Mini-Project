@@ -2,7 +2,8 @@ import { gql,  useMutation } from '@apollo/client';
 import React from 'react'
 import { useState, useEffect } from "react";
 import { getCourses } from '../api/api';
-import SideNavbarItems from '../Component/Navbar/SideNavbarItems';
+import { toast } from 'react-toastify';
+import SideNavbarItems from '../Component/Admin/Navbar/SideNavbarItems';
 
 
 const InsertCourse = gql`
@@ -18,31 +19,24 @@ const InsertCourse = gql`
     }
   }
   `
-const UpdateCourse = gql`
-  mutation MyMutation($deskripsi: String!, $deskripsi_full: String!, $id_course: Int!, $mentor: String!, $title: String!, $id: Int!) {
-    update_miniproject_course(where: {id: {_eq: $id}}, 
-      _set: {deskripsi: $deskripsi, deskripsi_full: $deskripsi_full, id_course: $id_course, mentor: $mentor, title: $title}) {
-      returning {
-        deskripsi
-        deskripsi_full
-        id_course
-        mentor
-        title
-      }
-    }
-  }
-
-`
   
 
 
 const NavbarAddCourseContainer = () => {
     const [courses, setCourses] = useState([]);
     const [insertCourse, {loading: loadingInsert}] = useMutation(InsertCourse);
-    const [updateCourse, {loading: loadingUpdate}] = useMutation(UpdateCourse);
     const {loading, setLoading} = useState([true]);
+    const notify = () => toast.success('New Course Added!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   
-    console.log(courses)
   
     const [formData, setFormData] = useState({
       id_course: "",
@@ -80,16 +74,6 @@ const NavbarAddCourseContainer = () => {
     }else{
       if (courseLocation >= 0){
         alert('Id ini sudah diambil')
-        // await updateCourse ({
-        //   variables: {
-        //       mentor : formData.mentor,
-        //       title : formData.title,
-        //       id_course : +formData.id_course,
-        //       id : +formData.id,
-        //       deskripsi : formData.deskripsi,
-        //       deskripsi_full : formData.deskripsi_full
-        //   }
-        // })
       } else{
         await insertCourse({
           variables: {
@@ -119,7 +103,8 @@ const NavbarAddCourseContainer = () => {
                         loading={loading}
                         formData={formData}
             handleChangeFormData={handleChangeFormData}
-            handleSubmit={handleSubmit}/>
+            handleSubmit={handleSubmit}
+            notify={notify}/>
     
   )
 }

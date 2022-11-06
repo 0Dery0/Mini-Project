@@ -2,7 +2,8 @@ import { gql,  useMutation } from '@apollo/client';
 import React from 'react'
 import { useState, useEffect } from "react";
 import { getCourses } from '../api/api';
-import SideNavbarItems from '../Component/Navbar/SideNavbarItems';
+import { toast } from 'react-toastify';
+import SideNavbarItems from '../Component/Admin/Navbar/SideNavbarItems';
 
 const UpdateCourse = gql`
   mutation MyMutation($deskripsi: String!, $deskripsi_full: String!, $id_course: Int!, $mentor: String!, $title: String!, $id: Int!) {
@@ -25,8 +26,16 @@ const NavbarEditCourseContainer = () => {
     const [courses, setCourses] = useState([]);
     const [updateCourse, {loading: loadingUpdate}] = useMutation(UpdateCourse);
     const {loading, setLoading} = useState([true]);
-  
-    console.log(courses)
+    const notify = () => toast.success('Course Success Edited!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   
     const [formData, setFormData] = useState({
       id_course: "",
@@ -86,7 +95,8 @@ const NavbarEditCourseContainer = () => {
                         loading={loading}
                         formData={formData}
                     handleChangeFormData={handleChangeFormData}
-                    handleSubmit={handleSubmit}/>
+                    handleSubmit={handleSubmit}
+                    notify={notify}/>
     
   )
 }
