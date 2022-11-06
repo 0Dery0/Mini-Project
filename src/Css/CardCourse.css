@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Poiret+One&family=Roboto:wght@300&display=swap');
+
+.card-header{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    background-color: rgb(192, 192, 192);
+}
+.card-title{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+.card-body{
+    background-color: rgb(244, 244, 244);
+}
+.card-text{
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+.card-course{
+    border-radius: 5px;
+    box-shadow: black 0px 0px 8px 0px;
+}
+
+.card-course-t{
+    border-width: 3px;
+    border-color: rgb(110, 110, 255);
+    box-shadow: 1px 1px 8px 3px;
+}
+.card-course-w{
+    border-width: 3px;
+    border-color: rgb(110, 110, 255);
+    box-shadow: 1px 1px 8px 3px;
+}

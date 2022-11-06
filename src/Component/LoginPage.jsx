@@ -1,19 +1,19 @@
 import React from 'react'
+import '../Css/FooterWeb.css'
 import '../Css/LoginPage.css';
-import logo from '../Img/logo.jpg'
-import loginImg from '../Img/Free Vector _ Webinar concept illustration.jpg'
+import '../Css/CardCourse.css'
+import logo from '../Img/logo.png'
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
+import { Spinner, Form, Col,Row, Card, Navbar, FloatingLabel, Dropdown } from 'react-bootstrap';
+import FooterWeb from './FooterWeb';
+import LoginCardWhyUs from './LoginCardWhyUs';
+import LoginTestimoni from './LoginTestimoni';
 
 
 
 const LoginPage = ({
+    data,
+    loading,
     emailInput,
     passwordInput,
     handleEmailChange,
@@ -26,7 +26,7 @@ const LoginPage = ({
     <Navbar>
         <Container fluid className='navbar'>
             <Col sm={6} lg={8}>
-            <Navbar.Brand href="/" className='ps-4'>
+            <Navbar.Brand className='ps-4'>
             <img
               alt=""
               src={logo}
@@ -39,76 +39,24 @@ const LoginPage = ({
             </Col>
             <Col className='d-flex flex-row justify-content-around' sm={4} lg={2}>
             <div>
-                About
+                
             </div>
-            <div>
-                Help
-            </div>
+            <a>
+                
+            </a>
             </Col>
             <Col  sm={2} lg={2}>
             <Navbar.Toggle aria-controls="navbar-example"/>
-                <Dropdown className="d-flex justify-content-center login-card pe-5">
+                <Dropdown className="d-flex justify-content-center pe-5">
                     <Dropdown.Toggle id="dropdown-autoclose-true">
-                    Login here!
+                        Login here!
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                    <Card border="primary" style={{ width: '14rem' }}>
+                    <Card style={{ width: '15rem' }} className={'login-card'} border="light">
                         <Card.Header>Login</Card.Header>
                         <Card.Body>
-                        <Card.Title>Enter your email :</Card.Title>
-                        <form autoComplete="off" onSubmit={handleLoginSubmit}>
-                            <div className="form-group mb-3">
-                                <input
-                                type="email"
-                                className="form-control"
-                                id="Email"
-                                aria-describedby="emailHelp"
-                                placeholder="Enter email"
-                                value={emailInput}
-                                onChange={handleEmailChange}
-                                />
-                            </div>
-                            <div className="form-group mb-3">
-                                <input
-                                type="password"
-                                autoComplete="new-password"
-                                className="form-control"
-                                id="Password"
-                                placeholder="Password"
-                                value={passwordInput}
-                                onChange={handlePasswordChange}
-                                />
-                            </div>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox" required>
-                                <Form.Check type="checkbox" label="Check me out!" />
-                            </Form.Group>
-                            <button type="submit" className="btn btn-primary">
-                                Submit
-                            </button>
-                        </form>
-                        </Card.Body>
-                    </Card>   
-                    </Dropdown.Menu>
-                </Dropdown>
-            </Col>
-            
-        </Container>
-    </Navbar><br/><br/><br/><br/><br/>
-    <Container fluid className='ps-5'>
-        <Row>
-            <Col md={6} lg={5}>
-                <div>
-                Spy-on merupakan singkatan dari Sistem Pembelajaran Young Generation ialah sebuah web yang memberikan pelajaran secara online didukung 
-                oleh para mentor yang professional di bidangnya masing-masing serta memiliki berbagai koneksi pengajar yang tersebar diseluruh indonesia
-                membuat pengajaran dapat berlangsung secara lancar dan fleksibel.
-                </div>
-                   <br/><br/><br/><br/>
-                <div className='d-flex'>
-                    <Card style={{ width: '20rem' }}>
-                        <Card.Header></Card.Header>
-                        <Card.Body>
-                        <Card.Title>Enter your email :</Card.Title>
-                        <form autoComplete="off" onSubmit={handleLoginSubmit}>
+                            <Card.Title className='font-merri mb-3'>Enter your email :</Card.Title>
+                            <form autoComplete="off" onSubmit={handleLoginSubmit}>
                         <FloatingLabel
                             controlId="floatingInput"
                             label="Email address"
@@ -131,26 +79,81 @@ const LoginPage = ({
                                 value={passwordInput}
                                 onChange={handlePasswordChange}/>
                             </FloatingLabel>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox" required>
-                                <Form.Check type="checkbox" label="Check me out!" />
-                            </Form.Group>
                             <button type="submit" className="btn btn-primary">
-                                Submit
+                                Login
                             </button>
                         </form>
                         </Card.Body>
                     </Card>   
-                </div>
-                
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Col>
+            
+        </Container>
+    </Navbar><br/><br/><br/>
+    <Container fluid className=''>
+        <Row className='bg-login'>
+            <Col md={6} lg={5}><br/><br/><br/>
+                <div className='text-login'>
+                Spy-on merupakan singkatan dari Sistem Pembelajaran Young Generation ialah sebuah web yang memberikan pelajaran secara online didukung 
+                oleh para mentor yang professional di bidangnya masing-masing serta memiliki berbagai koneksi pengajar yang tersebar diseluruh indonesia
+                membuat pengajaran dapat berlangsung secara lancar dan fleksibel.
+                </div><br/><br/><br/><br/><br/>
+                <a className='button-us' href="#section-us">
+                    Learn More!
+                </a>
             </Col>
             <Col lg={1}></Col>
             <Col>
-            <img src={loginImg} className="loginImg pe-4" alt=''/>
+            
             </Col>
       </Row>
+
+      <div className='d-flex flex-column'><br/>
+        <div className='text-pilihan d-flex flex-column align-items-center'>
+            Program Pilihan :
+        </div>
+        <br/><br/>
+        <div className='d-flex flex-wrap justify-content-evenly'>
+        {
+            loading
+            ?
+            <Spinner animation="border" variant='primary'/>
+            :
+            data?.miniproject_course.map((course) =>(
+            <Card className="m-2 card-course" style={{ width: '23rem' }}>
+                <Card.Header style={{height:'7vh'}} className='d-flex align-items-center'>{course.title}</Card.Header>
+                <Card.Body>
+                <Card.Title>{course.mentor}</Card.Title>
+                    <Card.Text className='d-flex flex-column justify-content-between' style={{height:'17vh'}}>
+                    <div><br/>{course.deskripsi}</div>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+            ))
+        }
+        </div>
+        
+    </div><br/><br/><br/>
+    <div>
+    <div className='text-pilihan d-flex flex-column align-items-center' id='section-us'>
+        Why Us :
+    </div><br/><br/><br/>
+    <div>
+        <LoginCardWhyUs/>
+    </div>
+    </div><br/><br/><br/>
+    <div>
+    <div className='text-pilihan d-flex flex-column align-items-center'>
+        Testimoni Pengguna :
+    </div><br/><br/><br/>
+    <div>
+        <LoginTestimoni/>
+    </div>
+    </div>
     </Container>
-    
-    
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <FooterWeb/>
     </div>
   );
 }

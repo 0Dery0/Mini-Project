@@ -2,11 +2,11 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Col from 'react-bootstrap/Col';
-import "../../Css/TopNavbar.css"
+import "../../../Css/TopNavbar.css"
 import Dropdown from 'react-bootstrap/Dropdown';
 import SideNavbar from './SideNavbar';
-import MiniProfileContainer from '../../Container/MiniProfileContainer';
-
+import AdminMiniProfileContainer from '../../../Container/Admin/AdminMiniProfileContainer';
+import { Form } from 'react-bootstrap';
 
 
 const TopNavbar = () => {
@@ -14,25 +14,22 @@ const TopNavbar = () => {
     <>
     <Navbar>
         <Container fluid className='navbar'>
-            <Col sm={6} lg={8}>
-            <Navbar.Brand href="/" className='ps-4'>
-            <img
-              alt=""
-              src=""
-              width="40"
-              height="40"
-              className="d-inline-block align-top"
-            />{' '}
-            SPY-ON
-          </Navbar.Brand>
+            <Col sm={6} lg={8} className='d-flex flex-row'>
+            <div className='side-nav'>
+            <SideNavbar/>
+            </div>
+            <div>
+            <Form className="d-flex">
+            </Form>
+            </div>
             </Col>
             <Col className='d-flex flex-row justify-content-around' sm={4} lg={2}>
             <div>
-                About
+                
             </div>
-            <div>
-                Help
-            </div>
+            <a>
+                
+            </a>
             </Col>
             <Col  sm={2} lg={2}>
             <Navbar.Toggle aria-controls="navbar-example"/>
@@ -41,12 +38,15 @@ const TopNavbar = () => {
                       Your Account!
                     </Dropdown.Toggle>
                       <Dropdown.Menu>
-                        <MiniProfileContainer/>
+                      <AdminMiniProfileContainer/>
                       </Dropdown.Menu>
                 </Dropdown>
             </Col>
         </Container>
     </Navbar>
+    {/* <div className='container-fluid'>
+      <HomePage courseData={courseData}/>
+    </div> */}
     </>
   )
 }

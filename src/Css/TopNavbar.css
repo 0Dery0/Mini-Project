@@ -1,0 +1,10 @@
+svg{
+    width: 3em;
+    height: 2em;
+}
+svg:hover{
+    color: blue;
+}
+.text-n{
+    text-decoration: none;
+}
