@@ -1,4 +1,6 @@
 .container-footer{
+    display: flex;
+    flex-direction: column-reverse;
     left:0;
     bottom:0;
     right:0;
