@@ -1,14 +1,20 @@
  import React from 'react'
  import { Spinner, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { ToastContainer} from 'react-toastify';
+
  
  const CoursePage = ({
     courses,
     loading,
     handleDelete
  }) => {
+  
    return (
-    <div className='d-flex flex-row flex-wrap'>
+    <>
+    
+  <br/>
+  <div className='d-flex flex-row flex-wrap'>
         {
         loading
         ?
@@ -22,22 +28,24 @@ import { Link } from 'react-router-dom'
               {course.title}</Card.Header>
             <Card.Body>
               <Card.Title>{course.mentor}</Card.Title>
-                <div>Deskripsi : <br/>{course.deskripsi}</div>
-                <div className='d-flex flex-row justify-content-between'>
-                  <div>
+                <Card.Text className='d-flex flex-column justify-content-between' style={{height:'20vh'}}>
+                  <div>Deskripsi : <br/>{course.deskripsi}</div>
+                  <div className='d-flex flex-row justify-content-between'>
                   <Link to ={`/Course/${course.id}`} key={course.id_course}>
-                      <Button className='mt-3' variant="primary">Enroll now!</Button>
+                      <Button variant="primary">Check it!</Button>
                   </Link>
+                  <Button 
+                  onClick={()=>handleDelete(course.id)}>
+                  <ToastContainer />X</Button>
                   </div>
-                  <div>
-                  <Button onClick={()=>handleDelete(course.id)}>X</Button>
-                  </div>
-                </div>
+                </Card.Text>
             </Card.Body>
           </Card>
         ))
       }
     </div>
+    </>
+    
     
    )
  }

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
-import { Col, Row, Stack, Button } from 'react-bootstrap'
+import { Stack, Button } from 'react-bootstrap'
+import { ToastContainer} from 'react-toastify';
 
 const SideNavbarItems = ({
   formData,
   handleSubmit,
+  notify,
   handleChangeFormData
 }) => {
   const {id,id_course, mentor, deskripsi, deskripsi_full, title, } = formData;
@@ -18,7 +20,8 @@ const SideNavbarItems = ({
                           <Form.Label className='text-label'>Id</Form.Label>
                           <Form.Control 
                           required
-                          value={id} 
+                          value={id}
+                          onBlur={()=> console.log('User keluar dari input id')} 
                           onChange={(ev) => handleChangeFormData("id", ev.currentTarget.value)} />
                       </Form.Group>
                       <Form.Group>
@@ -52,7 +55,9 @@ const SideNavbarItems = ({
                           value={title}
                           onChange={(ev) => handleChangeFormData("title", ev.currentTarget.value)}/>
                       </Form.Group>
-                      <Button className='button-submit' type="submit">Submit</Button>
+                      <Button className='button-submit' type="submit" onClick={notify} >
+                      <ToastContainer />
+                      Submit</Button>
               </Stack>
             </Form>
           </Stack>

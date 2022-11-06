@@ -1,13 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
-import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import * as FaIcons from "react-icons/fa";
-import NavbarAddCourseContainer from '../../Container/NavbarAddCourseContainer';
-import NavbarEditCourseContainer from '../../Container/NavbarEditCourseContainer';
-import '../../Css/SideNavbar.css'
+import NavbarAddCourseContainer from '../../../Container/NavbarAddCourseContainer';
+import NavbarEditCourseContainer from '../../../Container/NavbarEditCourseContainer';
+import '../../../Css/SideNavbar.css'
 
 const SideNavbar = () => {
   const [show, setShow] = useState(false);

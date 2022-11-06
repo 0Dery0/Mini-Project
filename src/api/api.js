@@ -11,3 +11,7 @@ export const getCourses = async () => {
     const response = await client.get("/")
         return response.data.miniproject_course;
 };
+export const getUsers = async () => {
+    const response = await client.get("/")
+        return response.data.miniproject_user;
+};

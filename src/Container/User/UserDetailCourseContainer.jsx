@@ -1,8 +1,7 @@
 import React from 'react'
-import DetailCoursePage from '../Component/DetailCoursePage';
 import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { gql , useSubscription} from '@apollo/client';
+import UserDetailCoursePage from '../../Component/User/UserDetailCoursePage';
 
 const GetDetail = gql`
 subscription MySubscription($id: Int!) {
@@ -18,7 +17,7 @@ subscription MySubscription($id: Int!) {
   
  ` 
 
-const DetailCoursePageContainer = () => {
+const UserDetailCoursePageContainer = () => {
   const navigate = useNavigate()
   const {id} = useParams();
   const {data, loading} = useSubscription(GetDetail,{ variables: {id } }
@@ -28,9 +27,9 @@ console.log(data)
       navigate(-1);
   }
   return(
-      <DetailCoursePage courseData={data}
+      <UserDetailCoursePage courseData={data}
       handleGoBack={handleGoBack}
       loading={loading} />
   )
 }
-export default DetailCoursePageContainer
+export default UserDetailCoursePageContainer

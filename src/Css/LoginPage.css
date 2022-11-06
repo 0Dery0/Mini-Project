@@ -1,21 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Poiret+One&family=Roboto:wght@300&display=swap');
+
+.bg-login{
+    padding: 5px;
+    height: 60vh;
+    background-color: antiquewhite;
+    background-image: url('../Img/wepik-photo-mode-2022102-131853.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.color-tr{
+    background-color: rgba(255, 255, 255, 0);
+}
 body{
   background-color:rgb(249, 249, 249);
 }
 .navbar{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: large;
     display: flex;
     flex-direction: row;
     padding: 10px;
 }
 .login-card{
+    font-family: 'Roboto', sans-serif;
     margin-right: 0px;
 }
 .item-body{
     display: flex;
     justify-content: start;
     margin-left: 5px;
-    
 }
 .loginImg{
     width: 650px;
     height: 500px;
+}
+.font-merri{
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: large;
+}
+.text-login{
+    text-shadow: black 2px 5px 7px;
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: large;
+}
+.text-pilihan{
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 37px;
+}
+.button-us{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(210, 98, 29);
+    border-radius: 5px;
 }

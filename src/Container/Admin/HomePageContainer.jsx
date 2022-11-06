@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import HomePage from '../Component/HomePage'
+import HomePage from '../../Component/Admin/HomePage'
 
 
 const HomePageContainer = () => {
