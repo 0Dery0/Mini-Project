@@ -14,7 +14,7 @@ const LoginTestimoni = () => {
             </div><br/>
             <div className='d-flex flex-column align-items-center'>
                 <span>Asep Basreeeng</span>
-                <span>CEO Basreng Ramah</span>
+                <span className='text-small'>CEO Basreng Ramah</span>
             </div>
         </Card.Text>
         </Card.Body>
@@ -29,7 +29,7 @@ const LoginTestimoni = () => {
            </div><br/><br/>
             <div className='d-flex flex-column align-items-center'>    
                 <span>Nurhadi x Aldo</span>
-                <span>Meme Lord</span>
+                <span  className='text-small'>Meme Lord</span>
             </div>
         </Card.Text>
         </Card.Body>
@@ -45,7 +45,7 @@ const LoginTestimoni = () => {
             </div>
             <div className='d-flex flex-column align-items-center'>
                 <span>Gus Samsu</span>
-                <span>Pendiri Pedepokan Ho'oh Tenan</span>
+                <span  className='text-small'>Pendiri Pedepokan Ho'oh Tenan</span>
             </div>
         
         </Card.Text>
