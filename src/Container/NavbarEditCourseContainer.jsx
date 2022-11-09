@@ -81,7 +81,7 @@ const NavbarEditCourseContainer = () => {
               theme: "light",
               });
           })
-      }else if(courseLocation >= 1){
+      }else{
         toast.info('Id tidak ditemukan!', {
           position: "top-center",
           autoClose: 2000,
