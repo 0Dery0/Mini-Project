@@ -26,17 +26,6 @@ const NavbarAddCourseContainer = () => {
     const [courses, setCourses] = useState([]);
     const [insertCourse, {loading: loadingInsert}] = useMutation(InsertCourse);
     const {loading, setLoading} = useState([true]);
-    const notify = () => toast.success('New Course Added!', {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  
   
     const [formData, setFormData] = useState({
       id_course: "",
@@ -69,11 +58,29 @@ const NavbarAddCourseContainer = () => {
     evt.preventDefault()
     const courseLocation = courses.findIndex((course) => course.id === +formData.id);
     const id_courseLocation = courses.findIndex((course) => course.id_course === +formData.id_course);
-    if (id_courseLocation >= 0){
-      alert('Id Course ini sudah diambil')
+    if (courseLocation >= 0){
+      toast.info('Id ini sudah diambil!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }else{
-      if (courseLocation >= 0){
-        alert('Id ini sudah diambil')
+      if (id_courseLocation >= 0){
+        toast.info('Id Course ini sudah diambil!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       } else{
         await insertCourse({
           variables: {
@@ -84,12 +91,21 @@ const NavbarAddCourseContainer = () => {
               id : +formData.id,
               deskripsi : formData.deskripsi,
               deskripsi_full : formData.deskripsi_full
-              
             }
           }
         })
           .then((res) => {
             setCourses(prevState => [...prevState, res.data.insert_miniproject_course.returning[0]])
+            toast.success('Course Berhasil Ditambahkan!', {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
           })
       }
     }
@@ -104,7 +120,7 @@ const NavbarAddCourseContainer = () => {
                         formData={formData}
             handleChangeFormData={handleChangeFormData}
             handleSubmit={handleSubmit}
-            notify={notify}/>
+            />
     
   )
 }

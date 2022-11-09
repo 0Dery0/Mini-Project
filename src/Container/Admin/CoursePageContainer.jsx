@@ -26,22 +26,13 @@ const DeleteCourse = gql`
 const CoursePageContainer = () => {
     const {data, loading} = useSubscription(GetCourse);
     const [deleteCourse, {loading: loadingDelete}] = useMutation(DeleteCourse);
-    const notify = () => toast.success('Success added course!', {
-      position: "top-center",
-      autoClose: 4000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
+  
 
     const handleDelete = (idx) => {
       deleteCourse({variables: {id: idx}})
-      toast.error('Course Success Deleted!', {
+      toast.error('Course Berhasil Dihapus!', {
         position: "top-center",
-        autoClose: 4000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -52,8 +43,7 @@ const CoursePageContainer = () => {
   return (
     <CoursePage courses={data}
                 loading={loading}
-                handleDelete={handleDelete}
-                notify={notify}/>   
+                handleDelete={handleDelete}/>   
   )
 }
 

@@ -20,7 +20,7 @@ const SideNavbar = () => {
           <Offcanvas.Title >Spy-On</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-        <Accordion defaultActiveKey={['0']} alwaysOpen>
+        <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header>Add Course</Accordion.Header>
             <Accordion.Body>
@@ -33,6 +33,13 @@ const SideNavbar = () => {
             <Accordion.Body>
               Edit your course :
               <NavbarEditCourseContainer/>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Help</Accordion.Header>
+            <Accordion.Body>
+              Tidak bisa update?<br/>
+              -Tutup side bar, kemudian masukan ulang data
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

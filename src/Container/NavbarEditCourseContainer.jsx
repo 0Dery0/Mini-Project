@@ -26,16 +26,6 @@ const NavbarEditCourseContainer = () => {
     const [courses, setCourses] = useState([]);
     const [updateCourse, {loading: loadingUpdate}] = useMutation(UpdateCourse);
     const {loading, setLoading} = useState([true]);
-    const notify = () => toast.success('Course Success Edited!', {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
   
     const [formData, setFormData] = useState({
       id_course: "",
@@ -77,12 +67,31 @@ const NavbarEditCourseContainer = () => {
               deskripsi : formData.deskripsi,
               deskripsi_full : formData.deskripsi_full
           }
-        })
-      } else{
-        alert('Id yang anda masukan tidak ada!')
+        })     
           .then((res) => {
             setCourses(prevState => [...prevState, res.data.update_miniproject_course.returning[0]])
+            toast.success('Course Berhasil Diedit!', {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
           })
+      }else if(courseLocation >= 1){
+        toast.info('Id tidak ditemukan!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
     
     
@@ -96,7 +105,7 @@ const NavbarEditCourseContainer = () => {
                         formData={formData}
                     handleChangeFormData={handleChangeFormData}
                     handleSubmit={handleSubmit}
-                    notify={notify}/>
+                    />
     
   )
 }
