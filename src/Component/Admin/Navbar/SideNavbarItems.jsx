@@ -6,7 +6,6 @@ import { ToastContainer} from 'react-toastify';
 const SideNavbarItems = ({
   formData,
   handleSubmit,
-  notify,
   handleChangeFormData
 }) => {
   const {id,id_course, mentor, deskripsi, deskripsi_full, title, } = formData;
@@ -21,7 +20,7 @@ const SideNavbarItems = ({
                           <Form.Control 
                           required
                           value={id}
-                          onBlur={()=> console.log('User keluar dari input id')} 
+                          
                           onChange={(ev) => handleChangeFormData("id", ev.currentTarget.value)} />
                       </Form.Group>
                       <Form.Group>
@@ -55,7 +54,7 @@ const SideNavbarItems = ({
                           value={title}
                           onChange={(ev) => handleChangeFormData("title", ev.currentTarget.value)}/>
                       </Form.Group>
-                      <Button className='button-submit' type="submit" onClick={notify} >
+                      <Button className='button-submit' type="submit" >
                       <ToastContainer />
                       Submit</Button>
               </Stack>

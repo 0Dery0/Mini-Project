@@ -8,9 +8,6 @@ const UserDetailCoursePage = ({
     handleGoBack,
     courseData,
     loading,
-    handleEnroll,
-    formData,
-    handleChangeFormData
 }) => {
   const [show, setShow] = useState(false);
   const target = useRef(null);
