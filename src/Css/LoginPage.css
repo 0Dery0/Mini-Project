@@ -3,7 +3,7 @@
 
 .bg-login{
     padding: 5px;
-    height: 60vh;
+    height: 55vh;
     background-color: antiquewhite;
     background-image: url('../Img/wepik-photo-mode-2022102-131853.png');
     background-position: center;
@@ -19,49 +19,76 @@ body{
 }
 .navbar{
     font-family: 'Merriweather', serif;
-    font-weight: 700;
-    font-size: large;
+    font-weight: 900;
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 5px;
 }
 .login-card{
     font-family: 'Roboto', sans-serif;
     margin-right: 0px;
+    font-size: smaller;
+}
+.login-card-button{
+    font-family: 'Merriweather', serif;
+
+}
+.login-card-button:hover{
+    color: black;
+    background-color: green;
 }
 .item-body{
     display: flex;
     justify-content: start;
     margin-left: 5px;
 }
-.loginImg{
-    width: 650px;
-    height: 500px;
-}
 .font-merri{
     font-family: 'Merriweather', serif;
     font-weight: 900;
-    font-size: large;
+    font-size: small;
 }
 .text-login{
+    margin-top: 47px;
+    margin-bottom: 100px;
     text-shadow: black 2px 5px 7px;
     color: rgb(255, 255, 255);
     font-family: 'Merriweather', serif;
     font-weight: 700;
-    font-size: large;
+    font-size: 13px;
 }
 .text-pilihan{
+    margin-top: 70px;
+    margin-bottom: 50px;
     font-family: 'Merriweather', serif;
     font-weight: 900;
-    font-size: 37px;
+    font-size: 21px;
 }
 .button-us{
-    color: white;
+    margin: 10px;
+    color: rgb(227, 227, 227);
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     background-color: rgb(210, 98, 29);
     border-radius: 5px;
+    box-shadow: black 0px 0px 1px ;
+    font-size: smaller;
+}
+.button-us:hover{
+    color: black;
 }
 .text-small{
-    font-size: small;
+    font-size: 11px;
+}
+.text-smaller{
+    font-size: x-small;
+}
+.text-title-why{
+    text-shadow: blue 0px 0px 1px;
+}
+.text-n{
+    text-decoration: none;
+    color: black;
+}
+.text-n:hover{
+    color: rgb(0, 0, 0);
 }

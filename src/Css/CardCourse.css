@@ -1,33 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Poiret+One&family=Roboto:wght@300&display=swap');
 
-.card-header{
+.course-card-header{
     font-family: 'Merriweather', serif;
     font-weight: 700;
-    background-color: rgb(192, 192, 192);
+    font-size: 15px;
+    background-color: rgb(111, 111, 250);
+    height: 7vh;
 }
-.card-title{
+.course-card-title{
     font-family: 'Merriweather', serif;
     font-weight: 700;
+    font-size: 14px;
 }
-.card-body{
+.course-card-body{
     background-color: rgb(244, 244, 244);
 }
-.card-text{
+.course-card-text{
     font-family: 'Montserrat';
     font-weight: 600;
+    font-size: 12px;
 }
-.card-course{
+.course-card-shadow{
     border-radius: 5px;
     box-shadow: black 0px 0px 8px 0px;
 }
 
-.card-course-t{
+.course-card-course-t{
     border-width: 3px;
     border-color: rgb(110, 110, 255);
     box-shadow: 1px 1px 8px 3px;
 }
-.card-course-w{
+.course-card-border{
     border-width: 3px;
     border-color: rgb(110, 110, 255);
     box-shadow: 1px 1px 8px 3px;
+}
+.x-button{
+    border-color: rgba(240, 248, 255, 0);
+    color: black;
+    border-radius: 100px;
+    background-color: rgba(245, 245, 245, 0);
+}
+.x-button:hover{
+    background-color: red;
+    color: black;
+    border-radius: 100px;
+    border-color: rgba(244, 244, 244, 0);
+}
+.course-title{
+    font-size: medium;
+    text-align: center;
 }

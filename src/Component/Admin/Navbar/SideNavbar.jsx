@@ -15,13 +15,13 @@ const SideNavbar = () => {
     <>
       <FaIcons.FaBars onClick={handleShow}/>
 
-      <Offcanvas className='sideNav' show={show} onHide={handleClose} scroll={true} backdrop={true}>
+      <Offcanvas className='sideNav font-merri' show={show} onHide={handleClose} scroll={true} backdrop={true}>
         <Offcanvas.Header className='sideNav-header container-fluid'>
           <Offcanvas.Title >Spy-On</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
         <Accordion defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
+          <Accordion.Item eventKey="0" onTransitionEnd={1000}>
             <Accordion.Header>Add Course</Accordion.Header>
             <Accordion.Body>
               Enter your new course :
