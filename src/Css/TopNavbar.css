@@ -1,6 +1,6 @@
 svg{
     width: 3em;
-    height: 2em;
+    height: 27px;
 }
 svg:hover{
     color: blue;
@@ -8,4 +8,11 @@ svg:hover{
 .text-n{
     text-decoration: none;
     color: black;
+}
+.navbar{
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
 }

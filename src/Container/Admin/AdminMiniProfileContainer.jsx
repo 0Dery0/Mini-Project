@@ -27,21 +27,21 @@ const AdminMiniProfileContainer = () => {
         navigate('/')
     }
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='d-flex justify-content-center font-merri'>
                     {
                       loading
                       ?
                       <Spinner animation="border" variant='primary'/>
                       :
                       data?.miniproject_user.map((user) =>(
-                        <Card border="primary" style={{ width: '14rem' }}>
+                        <Card border="light" style={{ width: '14rem' }}>
                           <Card.Header>{user.role}</Card.Header>
                           <Card.Body>
                             <Card.Title><IoIosPerson/>{user.nama}</Card.Title>
                               <span>Umur : {user.umur}</span><br/>
                               <span>Email : {email}</span><br/>
-                              <span>Asal : {user.asal}</span>
-                              <button onClick={handleLogOut} className="btn btn-primary mt-3">
+                              <span>Asal : {user.asal}</span><br/>
+                              <button onClick={handleLogOut} className="btn text-small btn-primary mt-3">
                                 Log Out!
                               </button>
                           </Card.Body>

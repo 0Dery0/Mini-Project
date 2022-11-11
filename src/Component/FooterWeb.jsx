@@ -12,9 +12,9 @@ const FooterWeb = () => {
         © 2022 SPY-ON
         </div>
         <div className='d-flex justify-content-end pe-3'>
-        <BsDiscord className='m-1' style={{ height: '30px', width: '60px'  }} href=''/>
-        <TfiInstagram className='m-1' style={{ height: '30px', width: '60px' }} href=''/>
-        <AiOutlineFacebook style={{ height: '38px', width: '60px'   }} href='https://www.facebook.com/M.Dery.D/'/>
+        <BsDiscord className='m-1' style={{ height: '25px', width: '32px'  }} href=''/>
+        <TfiInstagram className='m-1' style={{ height: '25px', width: '32px'  }} href=''/>
+        <AiOutlineFacebook style={{ height: '32px', width: '39px'  }} href='https://www.facebook.com/M.Dery.D/'/>
         </div>
       </div>
       
