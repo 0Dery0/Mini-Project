@@ -2,12 +2,17 @@ import React from 'react'
 import { Accordion } from 'react-bootstrap'
 import FooterWeb from './FooterWeb'
 import UserNavbar from './User/Navbar/UserNavbar'
+import { motion } from "framer-motion"
+import { useState } from 'react';
+import {Button} from 'react-bootstrap'
+
+
 
 const HelpPage = () => {
   return (
     <>
     <UserNavbar/><br/><br/><br/><br/><br/>
-    <div className='container'>
+    <div className='container font-merri'>
     <Accordion defaultActiveKey={['0']} alwaysOpen>
     <Accordion.Item eventKey="0">
       <Accordion.Header>Pertanyaan biasa:</Accordion.Header>
@@ -21,6 +26,10 @@ const HelpPage = () => {
         <Accordion.Body>
         -Loading lama?<br/>
             Cek koneksi internetmu
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            />
         </Accordion.Body> 
     </Accordion.Item>
   </Accordion>
@@ -29,6 +38,7 @@ const HelpPage = () => {
   <div className=''>
   <FooterWeb/>
   </div>
+ 
   
     </>
     
